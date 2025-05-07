@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sicredi-primary: #33820d;
+  --sicredi-secondary: #276c0f;
+  --sicredi-highlight: #edf7e7;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+}
+
+.sicredi-container {
+  border: 2px solid var(--sicredi-primary);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(51, 130, 13, 0.2), 0 -4px 8px rgba(51, 130, 13, 0.2);
+}
+
+.sicredi-highlight {
+  font-weight: bold;
+  color: var(--sicredi-primary);
+}
+
+.sicredi-btn {
+  background-color: var(--sicredi-primary);
+  border-radius: 40px;
+  color: white;
+  width: 100%;
+}
+
+.sicredi-btn:hover {
+  background-color: var(--sicredi-secondary);
+}
+
+.sicredi-form-input {
+  border: 2px solid var(--sicredi-primary);
+  border-radius: 40px;
+}
+
+.sicredi-form-input:focus {
+  border-color: var(--sicredi-secondary);
+  outline: none;
+  box-shadow: 0 0 5px rgba(51, 130, 13, 0.5);
+}
+
+:root {
+  /* Base colors */
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  
+  /* Sicredi primary colors */
+  --primary: 105 82% 29%; /* #33820d */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 105 76% 24%; /* #276c0f */
+  --secondary-foreground: 0 0% 100%;
+  
+  /* Other UI colors */
+  --accent: 105 53% 94%; /* #edf7e7 light green */
+  --accent-foreground: 105 82% 29%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 105 82% 29%;
+  --radius: 1.5rem;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  
+  /* Sicredi primary colors remain */
+  --primary: 105 82% 29%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 105 76% 24%;
+  --secondary-foreground: 0 0% 100%;
+  
+  --accent: 105 53% 20%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .sicredi-container {
+    @apply max-w-md mx-auto bg-white rounded-[40px] border-2 border-[#33820d] shadow-lg overflow-hidden;
+  }
+  
+  .sicredi-highlight {
+    @apply font-bold text-[#33820d];
+  }
+  
+  .sicredi-form-input {
+    @apply w-full px-4 py-3 rounded-full border-2 border-[#33820d] focus:outline-none focus:border-[#276c0f] focus:ring-1 focus:ring-[#276c0f];
+  }
+  
+  .sicredi-btn {
+    @apply w-full py-3 bg-[#33820d] hover:bg-[#276c0f] text-white font-medium rounded-full transition duration-200 focus:outline-none focus:ring-2 focus:ring-[#33820d] focus:ring-opacity-50;
+  }
+}
